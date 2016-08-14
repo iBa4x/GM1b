@@ -2,6 +2,7 @@
 namespace iBa4x\gamemode;
 
 use pocketmine\plugin\PluginBase;
+use pocketmine\plugin\PluginManager;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\player\PlayerInteractEvent;
