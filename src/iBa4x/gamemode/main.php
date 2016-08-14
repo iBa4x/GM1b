@@ -10,19 +10,19 @@ use pocketmine\block\Block;
 
 class main extends PluginBase implements Listener{
 	public function onEnable(){
-		$this->getServer()->getPluginManager()->registerEvent($this, $this);
+		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getLogger()->info(TextFormat::GREEN . "By iBa4x");
 	}
-	public function onTap(PlayerInteractEvent $event){
+	public function onInteract(PlayerInteractEvent $event){
 		$player = $event->getPlayer();
-		if($player->hasPermission(gm1b.tap.gm)){
-		    if($event->getBlock()->get(Block::DIRT)){
+		if($player->hasPermission(gm1b.interact.gamemode)){
+		    if($event->getBlock()->getID() === 3){
 		    	$player->setGamemode(0);
-			    $player->sendPopup(TextFormat::BLUE . "set Gamemode 0");
+			$player->sendPopup(TextFormat::BLUE . "Gamemode 0");
 		    }
-		    if($event->getBlock()->get(Block::GLASS)){
+		    if($event->getBlock()->getID() === 20){
 		    	$player->setGamemode(1);
-		    	$player->sendPopup(TextFormat::AQUA . "set Gamemode 1");
+		    	$player->sendPopup(TextFormat::AQUA . "Gamemode 1");
 		    }
 		}
 	}
