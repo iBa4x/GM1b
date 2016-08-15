@@ -15,7 +15,7 @@ class main extends PluginBase implements Listener{
 	}
 	public function onInteract(PlayerInteractEvent $event){
 		$player = $event->getPlayer();
-		if($player->hasPermission(gm1b.interact.gamemode)){
+		if($player->hasPermission("gm1b.interact.gamemode")){
 		    if($event->getBlock()->getID() === 3){
 		    	$player->setGamemode(0);
 			$player->sendPopup(TextFormat::BLUE . "Gamemode 0");
